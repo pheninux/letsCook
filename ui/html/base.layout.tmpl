@@ -1,0 +1,33 @@
+{{define "base"}}
+    <!doctype html>
+    <html lang='en' id="html">
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{template "title" .}}</title>
+    <head>
+        {{block "url" .}}
+        {{end}}
+    </head>
+    <body>
+    <nav>
+        <div style="float: right"><a type="button" href="/user/logout">Logout</a></div>
+    </nav>
+
+    {{with .Flash}}
+        <div class="alert" style="background: {{.Code}}">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';"></span>
+            <strong>{{.Label}}</strong> {{.Message}}
+        </div>
+    {{end}}
+
+    {{template "body" .}}
+
+    <!-- And include the JavaScript file -->
+    <script src="/static/js/main.js" type="text/javascript"></script>
+    <script src="/static/js/functions.js" type="text/javascript"></script>
+    <script src="/static/js/rest.js" type="text/javascript"></script>
+    <script src="/static/js/date.js" type="text/javascript"></script>
+    {{template "footer" .}}
+    </body>
+    </html>
+{{end}}

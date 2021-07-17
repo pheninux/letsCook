@@ -1,0 +1,54 @@
+{{define "recipes"}}
+    {{range .PagedResults.Data}}
+        <div class="card">
+            {{with index .Images 0}}
+                <div class="header" style="background: url('{{.Src}}') no-repeat center">
+                    <div class="icon">
+                        <a href="#"><i class="fa fa-heart-o"></i></a>
+                    </div>
+                </div>
+            {{end}}
+            <div class="text">
+                <h1 class="food">
+                    {{.Title}}
+                </h1>
+                <i class="fa fa-clock-o"> {{.Cuisson}} Mins</i>
+                <i class="fa fa-users"> Serves {{.NbrPers}}</i>
+                <i class="fa fa-level-up"> {{.Lvl}}</i>
+                <i class="fa fa-money"> {{.Cout}} €</i>
+
+
+                {{if .Avis}}
+                    {{$data := rateAvgCalc .Avis}}
+                    <div class="stars">
+                        <li>
+                            {{range $i , $v := $data.Rates}}
+                                {{if eq $v 1}}
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                {{else}}
+                                    <a href="#"><i class="fa fa-star-o"></i></a>
+                                {{end}}
+                            {{end}}
+                            <a onclick="document.getElementById('{{.ID}}').style.display='block'"
+                               class="w3-button"><i class="r-color-link">{{$data.AvisCount}}
+                                    évaluations </i></a>
+                        </li>
+                    </div>
+                {{else}}
+                    <div class="stars">
+                        <li>
+                            <a href="#"><i class="fa fa-star-o"></i></a>
+                            <a href="#"><i class="fa fa-star-o"></i></a>
+                            <a href="#"><i class="fa fa-star-o"></i></a>
+                            <a href="#"><i class="fa fa-star-o"></i></a>
+                            <a href="#"><i class="fa fa-star-o"></i></a>
+                        </li>
+                    </div>
+                {{end}}
+                <p class="info">{{.Descri}}</p>
+            </div>
+            <a href="#" class="btn">Let's Cook!</a>
+        </div>
+        {{template "modal" .}}
+    {{end}}
+{{end}}

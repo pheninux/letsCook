@@ -1,0 +1,39 @@
+{{template "base" .}}
+{{define "title"}}Signup{{end}}
+{{block "url" .}}
+    <script rel="script" src="../static/js/signup.js"></script>
+    <link rel="stylesheet" href="../static/css/signup.css">
+{{end}}
+{{define "body"}}
+    <form action='/user/signup' method='POST' novalidate enctype="multipart/form-data">
+        <!-- Include the CSRF token -->
+        <input type='hidden' name='csrf_token' value='{{.CSRFToken}}'>
+        {{with .Form}}
+
+            <div class="media-user"><img id="avatar" src="" alt=""></div>
+            <input class="custom-file-input" type="file" name="avatar" accept=".jpg, .jpeg, .png" onchange="uploadFile(event)">
+            <div>
+                <label>Name:</label>
+                {{with .Errors.Get "name"}}
+                    <label class='error'>{{.}}</label> {{end}}
+                <input type='text' name='name' value='{{.Get "name"}}'></div>
+            <div>
+                <label>Email:</label>
+                {{with .Errors.Get "email"}}
+                    <label class='error'>{{.}}</label> {{end}}
+                <input type='email' name='email' value='{{.Get "email"}}'></div>
+            <div>
+                <label>Password:</label>
+                {{with .Errors.Get "password"}}
+                    <label class='error'>{{.}}</label>
+                {{end}}
+                <input type='password' name='password'></div>
+            <div>
+                <input type='submit' value='Signup'>
+            </div>
+            <div>
+                <a href="/user/signin" type="button">SignIn</a>
+            </div>
+        {{end}}
+    </form>
+{{end}}

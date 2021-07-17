@@ -1,0 +1,50 @@
+,
+"Images": [
+{
+"Typ": "png",
+"Size": 2545,
+"id_recipes" : 3
+},
+{
+"Typ": "jpeg",
+"Size": 5666,
+"id_recipes" : 3
+}
+],
+"Avis": [
+{
+"Rate": 2.5,
+"Comment": "pas trop bien",
+"id_recipes" : 3
+},
+{
+"Rate": 4,
+"Comment": "bien",
+"id_recipes" : 3
+},
+{
+"Rate": 4,
+"Comment": "pas top",
+"id_recipes" : 3
+}
+],
+"Groupes": [
+{
+"name": "familles",
+"id_users" : 1
+},
+{
+"name": "amis",
+"id_users" : 1
+}
+],
+"Etapes": [
+{
+"Detail": "etape 1",
+"id_recipes" : 3
+},
+{
+"Detail": "etape 2",
+"id_recipes" : 3
+}
+]

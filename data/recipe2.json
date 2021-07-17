@@ -1,0 +1,89 @@
+{
+  "Title": "pancakes",
+  "Descri": "t t t t t t ",
+  "Obs": "t t t t t t t t",
+  "Categorie": "dessert",
+  "Preparation": 30,
+  "Typ": "vegetalien",
+  "Cuisson": 30,
+  "Repos": 10,
+  "Lvl": "facile",
+  "nbr_pers": 3,
+  "Cout": 10,
+  "users_id": 1,
+  "Share": "public",
+  "Events": [
+    {
+      "Name": "ramadan",
+      "Descri": ""
+    }
+  ],
+  "Images": [
+    {
+      "Typ": "png",
+      "Size": 2545
+    },
+    {
+      "Typ": "jpeg",
+      "Size": 5666
+    }
+  ],
+  "Etapes": [
+    {
+      "Detail": "etape 1",
+      "Images": [
+        {
+          "Typ": "png",
+          "Size": 11111
+        },
+        {
+          "Typ": "png",
+          "Size": 22222
+        }
+      ]
+    },
+    {
+      "Detail": "etape 2",
+      "Images": [
+        {
+          "Typ": "png",
+          "Size": 33333
+        }
+      ]
+    }
+  ],
+  "Ingredients": [
+    {
+      "Title": "carrote",
+      "Qt": 2,
+      "Mesure": "p",
+      "Descri": ""
+    },
+    {
+      "Title": "tomatte",
+      "Qt": 6,
+      "Mesure": "p",
+      "Descri": ""
+    },
+    {
+      "Title": "ogions",
+      "Qt": 3,
+      "Mesure": "p",
+      "Descri": ""
+    }
+  ],
+  "Urls": [
+    {
+      "Url": "www.youtube.fr/123p"
+    },
+    {
+      "Url": "www.youtube.fr/12pp"
+    }
+  ],
+  "Groupes" : [
+    {
+      "Name" : "familles",
+      "users_id": 1
+    }
+  ]
+}

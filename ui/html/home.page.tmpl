@@ -1,0 +1,46 @@
+{{template "base" .}}
+{{define "title"}}{{.TempTitle}}{{end}}
+{{block "url" .}}
+    <link rel="stylesheet" href="../static/css/homeStyle.css">
+    <link rel="stylesheet" href="../static/css/card.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../static/css/comments.css">
+{{end}}
+{{define "body"}}
+
+    <div class="recipes-filter">
+        <form action="/recipes/filter" method="POST">
+            <input type="text" name="recipe-title" placeholder="Chercher des recettes par titre">
+            <input type="submit" onclick="recipesSearch()">rechercher</input><br>
+            Durée de préparation <= <input name="preparation-time" placeholder="exemple : 30" type="number"> min<br>
+            Nombre de couvert <= <input name="numbers-covers" placeholder="exemple : 5" type="number"><br>
+            Niveau <select name="level">
+                <option>tous niveaux</option>
+                <option>Facile</option>
+                <option>Moyen</option>
+                <option>Difficile</option>
+            </select><br>
+            Coût <= <input name="cost" type="number" placeholder="exemple : 10"> €
+        </form>
+    </div>
+
+    <div class="recipes">
+        {{template "recipes" .}}
+    </div>
+
+{{end}}
+
+{{define "modal" }}
+    <div class="w3-container">
+        <div id="{{.ID}}" class="w3-modal">
+            <div class="w3-modal-content">
+                <div class="w3-container">
+                    <span onclick="document.getElementById('{{.ID}}').style.display='none'"
+                          class="w3-button w3-display-topright">&times;</span>
+                    {{template "comments" .}}
+                </div>
+            </div>
+        </div>
+    </div>
+{{end}}

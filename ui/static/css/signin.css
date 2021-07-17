@@ -1,0 +1,13 @@
+.media-user {
+    margin-right: 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: rgb(236, 236, 236);
+    width: 77px;
+    height: 77px;
+}
+.media-user img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

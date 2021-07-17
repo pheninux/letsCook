@@ -1,0 +1,44 @@
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+.custom-file-input::before {
+    content: 'Choisir un avatar';
+    display: inline-block;
+    background: linear-gradient(top, #ef3e36, #d99090);
+    border: 1px solid #999;
+    border-radius: 5px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+    transition: 250ms;
+}
+.custom-file-input:hover::before {
+    border-color: black;
+}
+.custom-file-input:active::before {
+    background: #17bebb;
+    transition: 250ms;
+}
+
+.media-user {
+    margin-right: 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: rgb(236, 236, 236);
+    width: 77px;
+    height: 77px;
+}
+.media-user img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+

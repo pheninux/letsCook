@@ -1,0 +1,36 @@
+{{define "comments"}}
+    <div class="comment-section">
+        <div class="container">
+            <div class="review">
+                <h2 class="R-title">Commentaires</h2>
+                <div class="comment-section">
+                    {{range .Avis}}
+                        <div class="media media-review">
+                            {{$usr := getUser .UsersID }}
+                            <div class="media-user"><img src="{{$usr.AvatarUrl}}" alt=""></div>
+                            <div class="media-body">
+                                <div class="M-flex">
+                                    <h2 class="title"><span> {{$usr.Name}} </span>{{humainDate .Date}}</h2>
+                                    <div class="rating-row">
+                                        {{$data := rateCalc .}}
+                                        <ul>
+                                            {{range $i , $v := $data.Rates}}
+                                                {{if eq $v 1}}
+                                                    <li class=""><i class="fa fa-star"></i></li>
+                                                {{else}}
+                                                    <li class=""><i class="fa fa-star-o"></i></li>
+                                                {{end}}
+                                            {{end}}
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="description">{{.Comment}}
+                                </div>
+                            </div>
+                        </div>
+                    {{end}}
+                </div>
+            </div>
+        </div>
+    </div>
+{{end}}
