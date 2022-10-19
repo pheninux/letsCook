@@ -133,7 +133,7 @@ func main() {
 		//window
 		dsn = *flag.String("dsn", "root:r00t@tcp(localhost:3306)/recipe?parseTime=true", "MySQL data source name")
 	} else {
-		dsn = *flag.String("dsn", "adil:sherine@tcp(54.38.189.215:3306)/agefice_docs?parseTime=true", "MySQL data source name")
+		dsn = *flag.String("dsn", "adil:toto@tcp(54.38.189.215:3306)/agefice_docs?parseTime=true", "MySQL data source name")
 	}
 	//dsn := flag.String("dsn", "root:r00t@tcp(localhost:3306)/agefice_docs?parseTime=true", "MySQL data source name")
 	// Importantly, we use the flag.Parse() function to parse the command-line flag.
